@@ -33,7 +33,7 @@ public class TondeuseService {
 		return this.recupererEtDeplacerTondeuse(lignesPourActionTondeuse, perimetre);
 	}
 
-	public Tondeuse init(List<String> lignePositionInitialeTondeuse) {
+	protected Tondeuse init(List<String> lignePositionInitialeTondeuse) {
 
 		return Tondeuse.builder().position(positionService.init(lignePositionInitialeTondeuse))
 				.orientation(recuperationOrientationService
@@ -41,7 +41,7 @@ public class TondeuseService {
 				.build();
 	}
 
-	public Tondeuse recupererEtDeplacerTondeuse(List<List<String>> lignesPourActionTondeuse,
+	protected Tondeuse recupererEtDeplacerTondeuse(List<List<String>> lignesPourActionTondeuse,
 			Perimetre perimetre) {
 
 		List<String> ligneForPositionInitialeTondeuse = LineUtils
@@ -55,11 +55,11 @@ public class TondeuseService {
 		return deplacerTondeuse(tondeuse, ligneForCommandesDeplacement, perimetre);
 	}
 
-	public Tondeuse initialiserTondeuseFrom(List<String> lignePositionInitialeTondeuse) {
+	protected Tondeuse initialiserTondeuseFrom(List<String> lignePositionInitialeTondeuse) {
 		return this.init(lignePositionInitialeTondeuse);
 	}
 
-	public Tondeuse deplacerTondeuse(Tondeuse tondeuse, List<String> ligneCommandesDeplacement,
+	protected Tondeuse deplacerTondeuse(Tondeuse tondeuse, List<String> ligneCommandesDeplacement,
 			Perimetre perimetre) {
 
 		ligneCommandesDeplacement.stream()

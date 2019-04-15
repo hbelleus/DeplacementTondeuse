@@ -17,8 +17,8 @@ public class PositionService {
 	public Position init(List<String> lignePositionInitiale) {
 
 		return Position.builder()
-				.x(recuperationPositionService.recupererPositionSelonXDepuis(lignePositionInitiale))
-				.y(recuperationPositionService.recupererPositionSelonYDepuis(lignePositionInitiale))
+				.x(recuperationPositionService.recupererPositionSelonXFrom(lignePositionInitiale))
+				.y(recuperationPositionService.recupererPositionSelonYFrom(lignePositionInitiale))
 				.build();
 	}
 }

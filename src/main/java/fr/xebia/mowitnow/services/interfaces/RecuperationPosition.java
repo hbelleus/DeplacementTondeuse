@@ -4,7 +4,7 @@ import java.util.List;
 
 public interface RecuperationPosition {
 
-	int recupererPositionSelonXDepuis(List<String> lignePositionInitiale);
+	int recupererPositionSelonXFrom(List<String> lignePositionInitiale);
 
-	int recupererPositionSelonYDepuis(List<String> lignePositionInitiale);
+	int recupererPositionSelonYFrom(List<String> lignePositionInitiale);
 }

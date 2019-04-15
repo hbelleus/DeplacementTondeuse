@@ -42,20 +42,14 @@ public class ProcessorService implements Processor {
 
 		int nbrTondeuses = (lignesEntree.size() - 1) / 2;
 
+		log.debug("nombre de tondeuses: {}", nbrTondeuses);
+
 		List<Tondeuse> tondeuses = new ArrayList<>(nbrTondeuses);
 
 		for (int i = 1; i < lignesEntree.size(); i += 2) {
 
-			Tondeuse tondeuseInPositionFinale = null;
-
-			try {
-				tondeuseInPositionFinale = tondeuseService
-						.recupererEtDeplacerTondeuse(lignesEntree.subList(i, (i + 2)), perimetre);
-
-			} catch (IndexOutOfBoundsException e) {
-				log.warn("Risque maitrisé - la valeur de i dépasse le nombre d'éléments de la liste",
-						e);
-			}
+			Tondeuse tondeuseInPositionFinale = tondeuseService
+					.determinerPositionsFinale(lignesEntree.subList(i, (i + 2)), perimetre);
 
 			log.info("Position finale de la tondeuse {}: {}", ((i + 1) / 2), tondeuseInPositionFinale);
 
