@@ -20,7 +20,7 @@ public class PerimetreService {
 		return this.determinerPerimetre(x, y);
 	}
 
-	public Perimetre determinerPerimetre(int x, int y) {
+	private Perimetre determinerPerimetre(int x, int y) {
 		return Perimetre.builder().limiteSelonX(x).limiteSelonY(y).build();
 	}
 
@@ -30,11 +30,11 @@ public class PerimetreService {
 	}
 
 	public boolean respecteLimiteSelonX(int xApresCommande, int limiteSelonX) {
-		return 0 <= xApresCommande && limiteSelonX + 1 >= xApresCommande;
+		return 0 <= xApresCommande && limiteSelonX >= xApresCommande;
 
 	}
 
 	public boolean respecteLimiteSelonY(int yApresCommande, int limiteSelonY) {
-		return 0 <= yApresCommande && limiteSelonY + 1 >= yApresCommande;
+		return 0 <= yApresCommande && limiteSelonY >= yApresCommande;
 	}
 }

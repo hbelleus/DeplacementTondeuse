@@ -34,7 +34,7 @@ public class RecuperationOrientationService implements RecuperationOrientation, 
 
 	@Override
 	public double recupererOrientationFrom(List<String> lignePositionInitiale) {
-		return Double.valueOf(directions.get(lignePositionInitiale.get(2)));
+		return directions.get(lignePositionInitiale.get(2));
 	}
 
 	@Override

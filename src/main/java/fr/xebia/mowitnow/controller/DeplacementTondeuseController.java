@@ -16,7 +16,7 @@ public class DeplacementTondeuseController {
 	@Autowired
 	private Processor processorService;
 
-	@RequestMapping(value = "getPositionsFinales", method = RequestMethod.GET)
+	@RequestMapping(value = "getPositionFinale", method = RequestMethod.GET)
 	public List<String> getPositionFinale() {
 		return processorService.process().stream().map(Object::toString).collect(Collectors.toList());
 	}
