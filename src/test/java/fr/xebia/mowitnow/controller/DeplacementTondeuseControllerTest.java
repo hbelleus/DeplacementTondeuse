@@ -33,7 +33,7 @@ public class DeplacementTondeuseControllerTest {
 
 		Mockito.when(processorService.process()).thenReturn(Arrays.asList(getTondeuse()));
 
-		List<String> tondeuses = deplacementTondeuseController.getPositionFinale();
+		List<String> tondeuses = deplacementTondeuseController.getFinalPosition();
 
 		Assert.assertThat(tondeuses.size(), is(1));
 		Assert.assertThat(true, is(Matcher.match("5 10 S", tondeuses.get(0).toString(), false)));

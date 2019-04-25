@@ -4,9 +4,9 @@
     <include resource="org/springframework/boot/logging/logback/base.xml"/>
     
     <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
-    	<file>../../logs/position.log</file>
+    	<file>../logs/position.log</file>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>../../archive/position.%d{yyyy-MM-dd_HHmm}.log</fileNamePattern>
+            <fileNamePattern>../archive/position.%d{yyyy-MM-dd_HHmm}.log</fileNamePattern>
             <maxHistory>10</maxHistory>
             <totalSizeCap>100MB</totalSizeCap>
         </rollingPolicy>    
@@ -16,7 +16,7 @@
         </encoder>
     </appender> 
 
-    <logger name="fr.xebia.mowitnow" level="DEBUG" />
+    <logger name="fr.xebia.mowitnow" level="INFO" />
    
     <root level="INFO">
         <appender-ref ref="CONSOLE"/>
